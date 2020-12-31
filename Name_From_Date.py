@@ -1,6 +1,6 @@
 import os, time
 import exifread
-directory = r'C:\Users\Old_02\Desktop\File Renamer Sandbox'
+directory = r'C:\Users\Old_02\Desktop\File Renamer Test Files'
 for file in os.scandir(directory):
     if file.path.lower().endswith(('.tiff', 'jpg', 'jpeg' 'webp', 'heic')):
 
