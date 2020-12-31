@@ -7,10 +7,16 @@ for file in os.scandir(directory):
         print(
             str(file.path)
             + ' '
-            + str(os.path.dirname(file.path)) + '\\' + str(exifread.process_file(open(file.path, 'rb'), details = False)['Image DateTime']).replace(':', '-') + str(os.path.split(file.path)[-1])
+            + str(os.path.dirname(file.path))
+            + '\\' + str(exifread.process_file(open(file.path, 'rb'), details = False)['Image DateTime']).replace(':', '-')
+            + ' + '
+            + str(os.path.split(file.path)[-1])
             )
 
         os.rename(
             file.path,
-            str(os.path.dirname(file.path)) + '\\' + str(exifread.process_file(open(file.path, 'rb'), details = False)['Image DateTime']).replace(':', '-') + str(os.path.split(file.path)[-1])
+            str(os.path.dirname(file.path))
+            + '\\' + str(exifread.process_file(open(file.path, 'rb'), details = False)['Image DateTime']).replace(':', '-')
+            + ' + '
+            + str(os.path.split(file.path)[-1])
             )
